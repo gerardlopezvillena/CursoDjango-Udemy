@@ -3,11 +3,14 @@ from django.db import models
 # instancies que es guardaran a la bbdd
 
 # Create your models here.
-class Project(models.model):
-    # La classe Projedt hereda de la classe models.model
+class Project(models.Model):
+    # La classe Projedt hereda de la classe models.Model
     # que el que et genera es una taula a la base de dades.
     # Les taules tenen files i columnes, i cada atribut
     # daquesta classes sera uha xooumna diferent
-    title= # cada atribut es una columna (aixo esta definit
-        # aixi a models.model
-    description=
+    title= models.CharField()
+    # cada atribut es una columna (aixo esta definit aixi a models.Model
+    description=models.TextField()
+    image=ImageField()
+    created=DateTimeField(auto_now_add=True)
+    updated=DateTimeField(auto_now=True)
