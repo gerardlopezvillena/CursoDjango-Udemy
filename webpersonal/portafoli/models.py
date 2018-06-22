@@ -14,3 +14,21 @@ class Project(models.Model):
     image=models.ImageField()
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
+    class Meta():
+        verbose_name="projecte"
+        # modifico el nom en angles
+        # del model Projects (ja se
+        # que ho he creat jo, pero
+        # era per mantenir una
+        # llogica en el codi, en
+        # que tot esta en angles
+        verbose_name_plural="projectes"
+        # poso el plural
+        ordering=[-created]
+        # ordeno els projectes
+        # per data de creacio
+        # com ho he posat negatiu
+        # vol dir que sordena a la
+        # inversa, es a dir, del
+        # projecte mes nou al mes
+        # antic
