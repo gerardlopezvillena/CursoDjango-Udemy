@@ -8,12 +8,12 @@ class Project(models.Model):
     # que el que et genera es una taula a la base de dades.
     # Les taules tenen files i columnes, i cada atribut
     # daquesta classes sera uha xooumna diferent
-    title= models.CharField(max_length=200)
+    title= models.CharField(max_length=200, verbose_name="titol")
     # cada atribut es una columna (aixo esta definit aixi a models.Model
-    description=models.TextField()
-    image=models.ImageField()
-    created=models.DateTimeField(auto_now_add=True)
-    updated=models.DateTimeField(auto_now=True)
+    description=models.TextField(verbose_name="descripcio")
+    image=models.ImageField(verbose_name="imatge")
+    created=models.DateTimeField(auto_now_add=True, verbose_name="creat")
+    updated=models.DateTimeField(auto_now=True, verbose_name="modificat")
     class Meta():
         verbose_name="projecte"
         # modifico el nom en angles
@@ -24,7 +24,7 @@ class Project(models.Model):
         # que tot esta en angles
         verbose_name_plural="projectes"
         # poso el plural
-        ordering=[-created]
+        ordering=["-created"]
         # ordeno els projectes
         # per data de creacio
         # com ho he posat negatiu
@@ -32,3 +32,6 @@ class Project(models.Model):
         # inversa, es a dir, del
         # projecte mes nou al mes
         # antic
+
+    def __str__(self):
+        return(self.title)
