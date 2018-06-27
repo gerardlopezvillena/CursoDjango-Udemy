@@ -120,3 +120,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Media Files
+# Haig dafegir aquesta configuracio ja que django, per defecte
+# no manega fitxers multimedia, i haig de crear un directori
+# i confifurarlo de manera manual
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")

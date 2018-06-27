@@ -4,14 +4,20 @@ from django.db import models
 
 # Create your models here.
 class Project(models.Model):
-    # La classe Projedt hereda de la classe models.Model
+    # La classe Project hereda de la classe models.Model
     # que el que et genera es una taula a la base de dades.
     # Les taules tenen files i columnes, i cada atribut
     # daquesta classes sera uha xooumna diferent
     title= models.CharField(max_length=200, verbose_name="titol")
     # cada atribut es una columna (aixo esta definit aixi a models.Model
     description=models.TextField(verbose_name="descripcio")
-    image=models.ImageField(verbose_name="imatge")
+    image=models.ImageField(verbose_name="imatge",upload_to="projects")
+    # upload_to fa que automaticament et genera una carpeta projects en el
+    # directori per defecte on es pugen les imatges (media) i guarda les
+    # imatges pujades daquesta manera en aquesta ubicacio. De manera manual
+    # hem definit una carpeta a la arrel del projecte que es diu media i
+    # llavors es creara una carpeta projects on shi afegiran tots els
+    # fitxers pujats daquesta manera
     created=models.DateTimeField(auto_now_add=True, verbose_name="creat")
     updated=models.DateTimeField(auto_now=True, verbose_name="modificat")
     class Meta():

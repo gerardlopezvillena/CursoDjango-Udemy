@@ -11,5 +11,5 @@ class ProjectAdmin(admin.ModelAdmin):
     # que hi ha consens en aquest tipus de nom
     readonly_fields=('created', 'updated')
 
-admin.site.register(Project, ProjectAdmin)
+admin.site.register(Project,ProjectAdmin)
 # he registrat els dos models Project i ProjectAdmin
