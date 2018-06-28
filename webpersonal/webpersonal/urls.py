@@ -17,6 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from core import views
 
+from django.conf import settings
+# aixo ens permet accedir al
+# fitxer settings, i per tant,
+# quan en mode de DEBUG del
+# projecte volguem carregar un arxiu
+# django ens ho permeti
+
 urlpatterns = [
     path('',views.home,name='home'),
     #el path indica a quina extensio
@@ -28,3 +35,7 @@ urlpatterns = [
     path('contacte',views.contacte,name='contacte'),
     path('admin/', admin.site.urls),
 ]
+
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
