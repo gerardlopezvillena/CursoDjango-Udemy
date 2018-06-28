@@ -32,8 +32,5 @@ def home(request):
 def about(request):
     return(render(request,'core/referent.html'))
 
-def portafoli(request):
-    return(render(request,'core/portafoli.html'))
-
 def contacte(request):
     return(render(request,'core/contacte.html'))

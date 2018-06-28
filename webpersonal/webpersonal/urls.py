@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core import views
+from core import views as core_views
+from portafoli import views as portafoli_views
 
 from django.conf import settings
 # aixo ens permet accedir al
@@ -25,15 +26,15 @@ from django.conf import settings
 # django ens ho permeti
 
 urlpatterns = [
-    path('',views.home,name='home'),
+    path('',core_views.home,name='home'),
     #el path indica a quina extensio
     #de la pagina we posem el view
     #indicat. En el cas que estigui
     #buit es posa a la arrel
-    path('about-me',views.about,name='about'),
-    path('portafoli',views.portafoli,name='portafoli'),
-    path('contacte',views.contacte,name='contacte'),
-    path('admin/', admin.site.urls),
+    path('about-me',core_views.about,name='about'),
+    path('portafoli',portafoli_views.portafoli,name='portafoli'),
+    path('contacte',core_views.contacte,name='contacte'),
+    path('admin/',admin.site.urls),
 ]
 
 if settings.DEBUG:
