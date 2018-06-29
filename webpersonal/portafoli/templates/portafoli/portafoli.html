@@ -16,6 +16,14 @@ Portafoli
 {% block content %}
 
 <!-- Contenido Principal -->
+{{projects}}
+<!--Quan crido a la vista desde portafoli/views.py ho
+    faig introduint un diccionari de context que te
+    com a clau 'projects'  com a valor una llista
+    i aquesta llista conte els objectes del model cridat
+    a traves de la clau projectes. Per a cridar a un
+    diccionar de context ho faig amb {{}}-->
+    
   <!-- Proyecto -->
     <div class="col-lg-3 col-md-4 offset-lg-1">
         <img class="img-fluid" src={% static 'core/img/about-bg.jpg' %} alt="">
