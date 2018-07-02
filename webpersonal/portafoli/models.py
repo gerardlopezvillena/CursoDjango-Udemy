@@ -20,6 +20,7 @@ class Project(models.Model):
     # fitxers pujats daquesta manera
     created=models.DateTimeField(auto_now_add=True, verbose_name="creat")
     updated=models.DateTimeField(auto_now=True, verbose_name="modificat")
+    urlmoreinf=models.URLField(null=True,blank=True)
     class Meta():
         verbose_name="projecte"
         # modifico el nom en angles

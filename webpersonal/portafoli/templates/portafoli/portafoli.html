@@ -45,7 +45,9 @@ Portafoli
         <div class="col-lg-7 col-md-8">
             <h2 class="section-heading title">{{project.title}}</h2>   
             <p>{{project.description}}</p>
-          <!--<p><a href="http://google.com">Más información</a></-->
+            {% if {{project.urlmoreinf}}!=null or {{project.urlmoreinf}}!=blank %}
+                 <p><a href={{project.urlmoreinf}}>Mes informaci�n</a></p>
+            {% endif %}
         </div>
     {% endfor %}
 {% endblock %}
