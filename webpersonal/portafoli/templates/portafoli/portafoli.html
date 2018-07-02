@@ -45,8 +45,8 @@ Portafoli
         <div class="col-lg-7 col-md-8">
             <h2 class="section-heading title">{{project.title}}</h2>   
             <p>{{project.description}}</p>
-            {% if {{project.urlmoreinf}}!=null or {{project.urlmoreinf}}!=blank %}
-                 <p><a href={{project.urlmoreinf}}>Mes informaci√n</a></p>
+            {% if project.urlmoreinf %}
+                 <p><a href="{{project.urlmoreinf}}">Mes informacion</a></p>
             {% endif %}
         </div>
     {% endfor %}

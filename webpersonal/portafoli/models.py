@@ -12,6 +12,7 @@ class Project(models.Model):
     # cada atribut es una columna (aixo esta definit aixi a models.Model
     description=models.TextField(verbose_name="descripcio")
     image=models.ImageField(verbose_name="imatge",upload_to="projects")
+    urlmoreinf=models.URLField(verbose_name="direccio web",null=True,blank=True)
     # upload_to fa que automaticament et genera una carpeta projects en el
     # directori per defecte on es pugen les imatges (media) i guarda les
     # imatges pujades daquesta manera en aquesta ubicacio. De manera manual
@@ -20,7 +21,6 @@ class Project(models.Model):
     # fitxers pujats daquesta manera
     created=models.DateTimeField(auto_now_add=True, verbose_name="creat")
     updated=models.DateTimeField(auto_now=True, verbose_name="modificat")
-    urlmoreinf=models.URLField(null=True,blank=True)
     class Meta():
         verbose_name="projecte"
         # modifico el nom en angles
